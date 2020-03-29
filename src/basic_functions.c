@@ -9,6 +9,7 @@ unsigned int gcd(int,int);
 unsigned int lcm(int,int);
 float simple_interest(float,float,float);
 float compound_interest(float,float,float);
+float convert_to_centigrade(float);
 
 unsigned char is_even(int number){
   return number % 2 == 0;
@@ -47,10 +48,15 @@ float compound_interest(float principal,float rate_of_interest,float time){
   return total_amount - principal;
 }
 
+float convert_to_centigrade(float fahrenheit){
+  return (fahrenheit - 32) * 5/9;
+}
+
 int main(void){
   int number;
   int first_number,second_number;
   float principal,rate_of_interest,time;
+  float temperature;
 
   printf("Enter a number to check whether it is even or not : ");
   scanf("%d",&number);
@@ -99,4 +105,8 @@ int main(void){
   printf("Time in years : ");
   scanf("%f",&time);
   printf("Compound interest is %f\n\n",compound_interest(principal,rate_of_interest,time));
+
+  printf("Enter temperature in fahrenheit to convert it into centigrade : ");
+  scanf("%f",&temperature);
+  printf("%.2f fahrenheit = %.2f centigrade\n\n",temperature,convert_to_centigrade(temperature));
 }
