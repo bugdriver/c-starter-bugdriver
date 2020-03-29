@@ -12,6 +12,7 @@ float compound_interest(float,float,float);
 float convert_to_centigrade(float);
 float convert_to_fahrenheit(float);
 float find_greatest(float,float,float);
+float find_average(float,float,float);
 
 unsigned char is_even(int number){
   return number % 2 == 0;
@@ -61,6 +62,10 @@ float convert_to_fahrenheit(float centigrade){
 float find_greatest(float first_number,float second_number,float third_number){
   float greater = first_number > second_number ? first_number : second_number;
   return greater > third_number ? greater : third_number;
+}
+
+float find_average(float first_number,float second_number,float third_number){
+  return (first_number + second_number + third_number) / 3;
 }
 
 int main(void){
@@ -133,5 +138,14 @@ int main(void){
   scanf("%f",&num2);
   printf("Third Number : ");
   scanf("%f",&num3);
-  printf("greates of %.1f, %.1f and %.1f is %.1f\n\n",num1,num2,num3,find_greatest(num1,num2,num3));
+  printf("greatest of %.1f, %.1f and %.1f is %.1f\n\n",num1,num2,num3,find_greatest(num1,num2,num3));
+
+  printf("Enter three numbers to calculate average\n");
+  printf("First Number : ");
+  scanf("%f",&num1);
+  printf("Second Number : ");
+  scanf("%f",&num2);
+  printf("Third Number : ");
+  scanf("%f",&num3);
+  printf("average of %.1f, %.1f and %.1f is %.1f\n\n",num1,num2,num3,find_average(num1,num2,num3));
 }
