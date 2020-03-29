@@ -5,6 +5,7 @@ unsigned char is_odd(int);
 int square(int);
 int cube(int);
 int gcd(int,int);
+int lcm(int,int);
 
 unsigned char is_even(int number){
   return number % 2 == 0;
@@ -27,6 +28,11 @@ int gcd(int first_number,int second_number){
     return first_number;
   }
   return gcd(second_number,first_number % second_number);
+}
+
+int lcm(int first_number,int second_number){
+  int product = first_number * second_number;
+  return product / gcd(first_number,second_number);
 }
 
 int main(void){
@@ -55,4 +61,11 @@ int main(void){
   printf("Second Number : ");
   scanf("%d",&second_number);
   printf("gcd of %d and %d is %d\n\n",first_number , second_number , gcd(first_number,second_number));
+
+  printf("Enter two numbers get lcm\n");
+  printf("First Number : ");
+  scanf("%d",&first_number);
+  printf("Second Number : ");
+  scanf("%d",&second_number);
+  printf("gcd of %d and %d is %d\n\n",first_number , second_number , lcm(first_number,second_number));
 }
