@@ -10,6 +10,7 @@ unsigned int lcm(int,int);
 float simple_interest(float,float,float);
 float compound_interest(float,float,float);
 float convert_to_centigrade(float);
+float convert_to_fahrenheit(float);
 
 unsigned char is_even(int number){
   return number % 2 == 0;
@@ -50,6 +51,10 @@ float compound_interest(float principal,float rate_of_interest,float time){
 
 float convert_to_centigrade(float fahrenheit){
   return (fahrenheit - 32) * 5/9;
+}
+
+float convert_to_fahrenheit(float centigrade){
+  return (centigrade * 9/5) + 32;
 }
 
 int main(void){
@@ -109,4 +114,8 @@ int main(void){
   printf("Enter temperature in fahrenheit to convert it into centigrade : ");
   scanf("%f",&temperature);
   printf("%.2f fahrenheit = %.2f centigrade\n\n",temperature,convert_to_centigrade(temperature));
+
+  printf("Enter temperature in centigrade to convert it into fahrenheit : ");
+  scanf("%f",&temperature);
+  printf("%.2f centigrade = %.2f fahrenheit\n\n",temperature,convert_to_fahrenheit(temperature));
 }
