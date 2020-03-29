@@ -3,6 +3,7 @@
 unsigned char is_even(int);
 unsigned char is_odd(int);
 int square(int);
+int cube(int);
 
 unsigned char is_even(int number){
   return number % 2 == 0;
@@ -14,6 +15,10 @@ unsigned char is_odd(int number){
 
 int square(int number){
   return number * number;
+}
+
+int cube(int number){
+  return number * square(number);
 }
 
 int main(void){
@@ -29,4 +34,8 @@ int main(void){
   printf("Enter a number get square : ");
   scanf("%d",&number);
   printf("square of %d is %d\n\n",number,square(number));
+
+  printf("Enter a number get cube : ");
+  scanf("%d",&number);
+  printf("cube of %d is %d\n\n",number,cube(number));
 }
