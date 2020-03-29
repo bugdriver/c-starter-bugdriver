@@ -11,6 +11,7 @@ float simple_interest(float,float,float);
 float compound_interest(float,float,float);
 float convert_to_centigrade(float);
 float convert_to_fahrenheit(float);
+float find_greatest(float,float,float);
 
 unsigned char is_even(int number){
   return number % 2 == 0;
@@ -57,9 +58,15 @@ float convert_to_fahrenheit(float centigrade){
   return (centigrade * 9/5) + 32;
 }
 
+float find_greatest(float first_number,float second_number,float third_number){
+  float greater = first_number > second_number ? first_number : second_number;
+  return greater > third_number ? greater : third_number;
+}
+
 int main(void){
   int number;
   int first_number,second_number;
+  float num1,num2,num3;
   float principal,rate_of_interest,time;
   float temperature;
 
@@ -118,4 +125,13 @@ int main(void){
   printf("Enter temperature in centigrade to convert it into fahrenheit : ");
   scanf("%f",&temperature);
   printf("%.2f centigrade = %.2f fahrenheit\n\n",temperature,convert_to_fahrenheit(temperature));
+
+  printf("Enter three numbers to find greatest\n");
+  printf("First Number : ");
+  scanf("%f",&num1);
+  printf("Second Number : ");
+  scanf("%f",&num2);
+  printf("Third Number : ");
+  scanf("%f",&num3);
+  printf("greates of %.1f, %.1f and %.1f is %.1f\n\n",num1,num2,num3,find_greatest(num1,num2,num3));
 }
