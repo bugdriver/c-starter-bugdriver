@@ -148,4 +148,6 @@ int main(void){
   printf("Third Number : ");
   scanf("%f",&num3);
   printf("average of %.1f, %.1f and %.1f is %.1f\n\n",num1,num2,num3,find_average(num1,num2,num3));
+
+  return 0;
 }
