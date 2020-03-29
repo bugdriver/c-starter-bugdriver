@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 unsigned char is_even(int);
 unsigned char is_odd(int);
@@ -7,6 +8,7 @@ long cube(int);
 unsigned int gcd(int,int);
 unsigned int lcm(int,int);
 float simple_interest(float,float,float);
+float compound_interest(float,float,float);
 
 unsigned char is_even(int number){
   return number % 2 == 0;
@@ -38,6 +40,11 @@ unsigned int lcm(int first_number,int second_number){
 
 float simple_interest(float principal,float rate_of_interest,float time){
   return (principal * rate_of_interest * time) / 100;
+}
+
+float compound_interest(float principal,float rate_of_interest,float time){
+  float total_amount = principal * ( pow( (1 + rate_of_interest / 100),time ));
+  return total_amount - principal;
 }
 
 int main(void){
@@ -83,4 +90,13 @@ int main(void){
   printf("Time in years : ");
   scanf("%f",&time);
   printf("Simple interest is %f\n\n",simple_interest(principal,rate_of_interest,time));
+
+  printf("Get Compound Interest\n");
+  printf("Principal : ");
+  scanf("%f",&principal);
+  printf("Rate of Interest : ");
+  scanf("%f",&rate_of_interest);
+  printf("Time in years : ");
+  scanf("%f",&time);
+  printf("Compound interest is %f\n\n",compound_interest(principal,rate_of_interest,time));
 }
