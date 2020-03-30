@@ -1,1 +1,1 @@
-gcc src/basic_functions.c -o bin/basic_functions
+gcc src/loops.c -o bin/loops

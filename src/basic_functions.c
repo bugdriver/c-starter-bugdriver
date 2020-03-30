@@ -69,8 +69,7 @@ float find_average(float first_number,float second_number,float third_number){
 }
 
 int main(void){
-  int number;
-  int first_number,second_number;
+  int number,first_number,second_number;
   float num1,num2,num3;
   float principal,rate_of_interest,time;
   float temperature;
