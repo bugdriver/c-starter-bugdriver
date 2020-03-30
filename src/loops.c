@@ -2,6 +2,7 @@
 
 unsigned long factorial(int);
 void fibonacci(int);
+void odd_series(int);
 
 unsigned long factorial(int number){
   unsigned long factorial = 1;
@@ -22,11 +23,17 @@ void fibonacci(int no_of_terms){
 
 }
 
+void odd_series(int number){
+  for(int i=1; i<=number; i+=2){
+    printf(" %d ,",i);
+  }
+}
+
 int main(void){
   int number,option;
 
   printf("ID FUNC_NAME\n\n");
-  printf("1. Factorial\n2. Fibonacci\n\n");
+  printf("1. Factorial\n2. Fibonacci\n3. Odd Series\n\n");
   printf("Enter Function Id to execute : ");
   scanf("%d",&option);
   printf("\n");
@@ -40,6 +47,11 @@ int main(void){
       printf("Enter no of terms to get Fibonacci Series : ");
       scanf("%d",&number);
       fibonacci(number);
+      break;
+    case 3:
+      printf("Enter number to get odd series : ");
+      scanf("%d",&number);
+      odd_series(number);
       break;
     default:
       printf("wrong input");
