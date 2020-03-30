@@ -4,6 +4,7 @@ unsigned long factorial(int);
 void fibonacci(int);
 void odd_series(int);
 void even_series(int);
+void multiplication_table(int,int);
 
 unsigned long factorial(int number){
   unsigned long factorial = 1;
@@ -36,11 +37,17 @@ void even_series(int number){
   }
 }
 
+void multiplication_table(int m,int n){
+  for(int i=1; i<=n; i++){
+    printf("%d\n",m*i);
+  }
+}
+
 int main(void){
-  int number,option;
+  int number,option,num1,num2;
 
   printf("ID FUNC_NAME\n\n");
-  printf("1. Factorial\n2. Fibonacci\n3. Odd Series\n4. Even Series\n\n");
+  printf("1. Factorial\n2. Fibonacci\n3. Odd Series\n4. Even Series\n5. Multiplication Table\n\n");
   printf("Enter Function Id to execute : ");
   scanf("%d",&option);
   printf("\n");
@@ -64,6 +71,13 @@ int main(void){
       printf("Enter number to get even series : ");
       scanf("%d",&number);
       even_series(number);
+      break;
+    case 5:
+      printf("Enter Multiplicand : ");
+      scanf("%d",&num1);
+      printf("Enter No of terms : ");
+      scanf("%d",&num2);
+      multiplication_table(num1,num2);
       break;
     default:
       printf("wrong input");
