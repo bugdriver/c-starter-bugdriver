@@ -1,1 +1,1 @@
-gcc src/loops.c -o bin/loops
+gcc src/currency_breakdown.c -o bin/currency_breakdown
