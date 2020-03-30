@@ -10,6 +10,7 @@ long product_of_n(int,int);
 void print_odd_numbers(int,int);
 void print_even_numbers(int,int);
 void print_nth_number(int,int,int);
+long sum_of_even(int,int);
 
 unsigned long factorial(int number){
   unsigned long factorial = 1;
@@ -78,6 +79,15 @@ void print_odd_numbers(int start_num,int end_num){
   }
 }
 
+long sum_of_even(int start_num,int end_num){
+  long sum=0;
+  int first_even = start_num + (start_num % 2);
+  for(int even = first_even; even <= end_num; even+=2 ){
+    sum+=even;
+  }
+  return sum;
+}
+
 void print_nth_number(int start,int end,int n){
   for(int nth_number=start; nth_number<=end; nth_number+=n){
     printf("%d\n",nth_number);
@@ -89,7 +99,8 @@ int main(void){
 
   printf("ID FUNC_NAME\n\n");
   printf("1. Factorial\n2. Fibonacci\n3. Odd Series\n4. Even Series\n5. Multiplication Table\n");
-  printf("6. Sum Of N\n7. Product of N\n8. Print Odd Numbers\n9. Print Even Numbers\n10. Print Nth Number");
+  printf("6. Sum Of N\n7. Product of N\n8. Print Odd Numbers\n9. Print Even Numbers\n10. Print Nth Number\n");
+  printf("11. Sum of even numbers in a range");
   printf("\n\n");
   printf("Enter Function Id to execute : ");
   scanf("%d",&option);
@@ -158,6 +169,14 @@ int main(void){
       printf("Enter N : ");
       scanf("%d",&number);
       print_nth_number(num1,num2,number);
+      break;
+    case 11:
+      printf("Enter start : ");
+      scanf("%d",&num1);
+      printf("Enter End : ");
+      scanf("%d",&num2);
+      printf("sum of even numbers between %d and %d is %ld",num1,num2,sum_of_even(num1,num2));
+      sum_of_even(num1,num2);
       break;
     default:
       printf("wrong input");
