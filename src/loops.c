@@ -44,9 +44,9 @@ void multiplication_table(int m,int n){
   }
 }
 
-long sum_of_N(int start,int end){
+long sum_of_N(int start,int number_count){
   long sum = 0;
-  for(int i=start; i<=end; i++){
+  for(int i=start; i <= start+number_count; i++){
     sum+=i;
   }
   return sum;
