@@ -1,1 +1,1 @@
-gcc src/currency_breakdown.c -o bin/currency_breakdown
+gcc src/vaccine_decryption.c -o bin/vaccine_decryption
